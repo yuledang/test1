@@ -6,8 +6,6 @@
 		联动数据地址
 		获取数据方式
 		select1
-		select2
-		select3
 */
 
 ;(function($){
@@ -16,9 +14,7 @@
 			var defaults={
 				url:"data.json",
 				dataType:"get",
-				op1:"#sel1",
-				op2:"#sel2",
-				op3:"#sel3"
+				op1:"#sel1"
 			}
 			opts=$.extend({},defaults,option);
 			$.ajax({
@@ -34,22 +30,22 @@
 					})
 					//填充2
 					$(opts.op1).change(function(){
-						$(opts.op2).html("<option>请选择</option>")
+						$(this).next().html("<option>请选择</option>")
 						$index=$(this).val();
 						$.each(DATA["city"],function(i,n){
 							if (n["cid"]==$index) {
 								str="<option value="+n["id"]+">"+n["name"]+"</option>";
-								$(opts.op2).append(str);
+								$(opts.op1).next().append(str);
 							}
 						})
 					})
-					$(opts.op2).change(function(){
-						$(opts.op3).html("<option>请选择</option>")
+					$(opts.op1).next().change(function(){
+						$(this).next().html("<option>请选择</option>")
 						$index=$(this).val();
 						$.each(DATA["county"],function(i,n){
 							if (n["cid"]==$index) {
 								str="<option value="+n["id"]+">"+n["name"]+"</option>";
-								$(opts.op3).append(str);
+								$(opts.op1).next().next().append(str);
 							}
 						})
 					})	
