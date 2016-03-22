@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style type="text/css">
+	.wrap{
+		width: 300px;
+		height: 600px;
+		border: 1px solid #ccc;
+		margin: 0 auto;
+	}
+	.pic{
+		width: 300px;
+		height: 500px;
+		-webkit-transition:all 0.3s;
+	}
+	.pic img{
+		width: 300px;
+		height: 500px;
+		-webkit-transition:all 0.3s;
+	}
+	.code li{
+		list-style: none;
+		float: left;
+		padding: 0 20px;
+		width: 20px;
+		height: 20px;
+		background: red;
+		border-radius: 25px;
+		text-align: center;
+		cursor: pointer;
+		color: #fff;
+	}
+	.tpic{
+		width: 300px;
+		height: 500px;
+		overflow: hidden;
+	}
+</style>
+<body>
+	<div class="wrap">
+		<div class="tpic">
+			<div class="pic">
+				<img src="pic1.jpg"/>
+				<img src="pic2.jpg"/>
+				<img src="pic3.jpg"/>
+				<img src="pic4.jpg"/>
+			</div>
+		</div>
+		<ul class="code">
+			<li style="background: blue">1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+		</ul>
+	</div>
+</body>
+<script type="text/javascript" src="jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="jquery.pic_change-1.0.js"></script>
+<script type="text/javascript">
+	$(".wrap").tpchange({
+		direction:'opacitys'
+		//direction:'left'
+		//direction:'top'
+	});
+</script>
+</html>
